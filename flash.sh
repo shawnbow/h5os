@@ -107,12 +107,6 @@ flash_fastboot()
 	delete_single_variant_persist
 
 	case $DEVICE in
-	"helix")
-		run_adb reboot oem-1
-		;;
-	"flatfish")
-		run_adb reboot boot-fastboot
-		;;
 	*)
 		run_adb reboot bootloader
 		;;
@@ -137,22 +131,10 @@ flash_fastboot()
 
 	"")
 		VERB="erase"
-		if [ "$DEVICE" == "hammerhead" ] || [ "$DEVICE" == "mako" ] ||
-		[ "$DEVICE" == "flo" ]; then
+		if [ "$DEVICE" == "hammerhead" ];
 			VERB="format"
 		fi
 		DATA_PART_NAME="userdata"
-		if [ "$DEVICE" == "flatfish" ]; then
-			DATA_PART_NAME="data"
-		fi
-		# helix/dolphin don't support erase command in fastboot mode.
-		if [ "$DEVICE" != "helix" -a "$DEVICE_NAME" != "dolphin" ]; then
-			run_fastboot $VERB cache &&
-			run_fastboot $VERB $DATA_PART_NAME
-			if [ $? -ne 0 ]; then
-				return $?
-			fi
-		fi
 		if [ "$DEVICE" == "aries" ] || [ "$DEVICE" == "shinano" ]; then
 			fastboot_flash_image recovery
 		fi
@@ -374,33 +356,12 @@ case "$PROJECT" in
 esac
 
 case "$DEVICE" in
-"leo"|"hamachi"|"helix"|"sp6821a_gonk")
-	if $FULLFLASH; then
-		flash_fastboot nounlock $PROJECT
-		exit $?
-	else
-		run_adb root &&
-		run_adb shell stop b2g &&
-		run_adb remount &&
-		flash_gecko &&
-		flash_gaia &&
-		update_time &&
-		echo Restarting B2G &&
-		run_adb shell start b2g
-	fi
-	exit $?
-	;;
-
-"flame"|"otoro"|"unagi"|"keon"|"peak"|"inari"|"wasabi"|"flatfish"|"shinano"|"aries"|"scx15_sp7715"*)
+"flame"|"shinano"|"aries")
 	flash_fastboot nounlock $PROJECT
 	;;
 
-"panda"|"maguro"|"crespo"|"crespo4g"|"mako"|"hammerhead"|"flo")
+"hammerhead")
 	flash_fastboot unlock $PROJECT
-	;;
-
-"galaxys2")
-	flash_heimdall $PROJECT
 	;;
 
 *)
