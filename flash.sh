@@ -131,7 +131,7 @@ flash_fastboot()
 
 	"")
 		VERB="erase"
-		if [ "$DEVICE" == "hammerhead" ];
+		if [ "$DEVICE" == "hammerhead" ]; then
 			VERB="format"
 		fi
 		DATA_PART_NAME="userdata"
