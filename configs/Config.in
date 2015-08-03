@@ -1,0 +1,16 @@
+#
+# main Config.in file for H5OS configuration
+#
+
+mainmenu "H5OS Configuration"
+
+source configs/config.build
+source configs/config.components
+source configs/config.update
+source configs/config.debug
+
+# option to support enable/disable apps during build
+# source configs/config.apps
+
+endmenu
+

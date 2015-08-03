@@ -1,0 +1,13 @@
+
+menu "Update options"
+
+config H5OS_ENABLE_UPDATER
+  bool "Enable updater"
+  default y if H5OS_BUILD_USER
+
+config H5OS_UPDATE_CHANNEL
+  depends H5OS_ENABLE_UPDATER
+  string "Update channel"
+  default "default"
+
+endmenu
