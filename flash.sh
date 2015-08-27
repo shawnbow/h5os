@@ -360,7 +360,7 @@ case "$DEVICE" in
 	flash_fastboot nounlock $PROJECT
 	;;
 
-"hammerhead")
+"hammerhead"|"shamu")
 	flash_fastboot unlock $PROJECT
 	;;
 
