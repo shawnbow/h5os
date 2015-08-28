@@ -102,19 +102,25 @@ case "$1" in
 	repo_sync $1
 	;;
 
+"nexus-6")
+        echo DEVICE=shamu >> .tmp-config &&
+        repo_sync $1
+        ;;
+
 *)
 	echo "Usage: $0 [-cdflnq] (device name)"
 	echo "Flags are passed through to |./repo sync|."
 	echo
 	echo Valid devices to configure are:
-	echo - flame
-	echo - flame-l
-	echo - nexus-5
-	echo - nexus-5-l
-	echo - emulator-kk
-	echo - emulator-l
-	echo - emulator-x86-kk
-	echo - emulator-x86-l
+	echo - flame (kitkat)
+	echo - flame-l (lollipop)
+	echo - nexus-5 (kitkat)
+	echo - nexus-5-l (lollipop)
+	echo - nexus-6 (lollipop)
+	echo - emulator-kk (kitkat)
+	echo - emulator-l (lollipop)
+	echo - emulator-x86-kk (kitkat)
+	echo - emulator-x86-l (lollipop)
 	exit -1
 	;;
 esac
