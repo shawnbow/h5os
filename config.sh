@@ -112,15 +112,15 @@ case "$1" in
 	echo "Flags are passed through to |./repo sync|."
 	echo
 	echo Valid devices to configure are:
-	echo - flame (kitkat)
-	echo - flame-l (lollipop)
-	echo - nexus-5 (kitkat)
-	echo - nexus-5-l (lollipop)
-	echo - nexus-6 (lollipop)
-	echo - emulator-kk (kitkat)
-	echo - emulator-l (lollipop)
-	echo - emulator-x86-kk (kitkat)
-	echo - emulator-x86-l (lollipop)
+	echo - flame "(kitkat)"
+	echo - flame-l "(lollipop)"
+	echo - nexus-5 "(kitkat)"
+	echo - nexus-5-l "(lollipop)"
+	echo - nexus-6 "(lollipop)"
+	echo - emulator-kk "(kitkat)"
+	echo - emulator-l "(lollipop)"
+	echo - emulator-x86-kk "(kitkat)"
+	echo - emulator-x86-l "(lollipop)"
 	exit -1
 	;;
 esac
