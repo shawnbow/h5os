@@ -13,6 +13,7 @@ bionic/
 bootable/
 brcm_usrlib/
 build/
+config/
 dalvik/
 development/
 device/

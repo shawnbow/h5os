@@ -1,0 +1,25 @@
+
+# menu "Build Options"
+
+choice
+
+  prompt "Select Build Type"
+
+  config H5OS_BUILD_ENG
+    bool "Engineering build"
+
+  config H5OS_BUILD_USERDEBUG
+    bool "User debug build"
+
+  config H5OS_BUILD_USER
+    bool "User build"
+
+  config VARIANT
+    string
+	  default "eng" if H5OS_BUILD_ENG
+	  default "userdebug" if H5OS_BUILD_USERDEBUG
+	  default "user" if H5OS_BUILD_USER
+
+endchoice
+
+# endmenu

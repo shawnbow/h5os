@@ -1,0 +1,23 @@
+
+menu "Debug options"
+
+config H5OS_ENABLE_DEBUG
+  bool "Enable building with debug info"
+
+config H5OS_ENABLE_DUMP_PAINTING
+  bool "Enable paint debugging"
+
+config H5OS_ENABLE_VALGRIND
+  bool "Enable Valgrind integration hooks"
+  select H5OS_ENABLE_PROFILING
+
+config H5OS_ENABLE_PROFILING
+  bool "Enable profiling compile flags"
+
+config H5OS_ENABLE_DMD
+  bool "Enable DMD"
+
+config H5OS_DISABLE_OPTIMIZE
+  bool "Disable compiler optimization"
+
+endmenu

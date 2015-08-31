@@ -14,6 +14,10 @@ if [ -f "$B2G_DIR/.userconfig" ]; then
 	. "$B2G_DIR/.userconfig"
 fi
 
+if [ -f "$B2G_DIR/.menuconfig" ]; then
+	. "$B2G_DIR/.menuconfig"
+fi
+
 # Use default Gecko location if it's not provided in config files.
 if [ -z $GECKO_PATH ]; then
   GECKO_PATH=$B2G_DIR/gecko

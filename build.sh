@@ -52,6 +52,20 @@ function configure_device() {
     return $?
 }
 
+function menuconfig() {
+  make -C config
+  ./config/mconf configs/Config.in
+}
+
+if [ "$1" = "menuconfig" ] ; then
+  if [ -d "config" ] ; then
+    menuconfig
+  else
+    echo "config for generating menuconfig is missing."
+  fi
+  exit 0
+fi
+
 unset CDPATH
 . setup.sh &&
 if [ -f patches/patch.sh ] ; then

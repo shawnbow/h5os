@@ -1,0 +1,11 @@
+
+menu "Apps"
+
+config H5OS_TEST_STR
+	string "Test string"
+	default "test"
+
+config H5OS_ENABLE_DEBUG
+	string  "Enable Debug"
+	default "echo"
+endmenu

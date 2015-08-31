@@ -1,0 +1,58 @@
+
+menu "Functional Components"
+
+config H5OS_DISABLE_WEBRTC
+  bool "Disable support for WebRTC"
+
+config H5OS_DISABLE_WEBSPEECH
+  bool "Disable support for HTML Speech API"
+
+config H5OS_DISABLE_WEBSPEECH_TEST_BACKEND
+  bool "Disable support for HTML Speech API Test Backend"
+
+config H5OS_DISABLE_WEBM
+  bool "Disable support for WebM media (VP8 video and Vorbis audio)"
+
+config H5OS_DISABLE_FM
+  bool "Disable FM API"
+
+config H5OS_DISABLE_CAMERA
+  bool "Disable camera API"
+
+config H5OS_DISABLE_RIL
+  bool "Disable Radio Interface Layer"
+
+config H5OS_DISABLE_BT
+  bool "Disable Bluetooth API"
+
+config H5OS_DISABLE_NFC
+  bool "Disable NFC API"
+
+config H5OS_DISABLE_RTSP
+  bool "Disable support for RTSP"
+
+config H5OS_DISABLE_OMX_DECODER
+  bool "Disable support for OMX decoder"
+
+config H5OS_DISABLE_OMX_ENCODER
+  bool "Disable support for OMX encoder"
+
+config H5OS_DISABLE_AUDIO_OFFLOAD
+  bool "Disable support for audio offload"
+
+config H5OS_DISABLE_SECUREELEMENT
+  bool "Disable support for secure element"
+
+config H5OS_DISABLE_NECKO_WIFI
+  bool "Disable necko wifi scanner"
+
+config H5OS_DISABLE_BUILD_CTYPES
+  bool "Disable js-ctypes"
+
+config H5OS_DISABLE_SYNTH_PICO
+  bool "Disable Pico Web Speech API"
+
+config H5OS_DISABLE_FMP4
+  bool "Disable support for in built Fragmented MP4 parsing"
+
+endmenu
