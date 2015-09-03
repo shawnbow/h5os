@@ -14,5 +14,6 @@ export B2G_DEBUG &&
 export MOZ_CHROME_MULTILOCALE &&
 export L10NBASEDIR &&
 export MOZ_B2G_DSDS &&
+export B2G_DIR &&
 . build/envsetup.sh &&
 lunch $LUNCH
