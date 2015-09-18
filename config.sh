@@ -92,7 +92,7 @@ case "$1" in
 	repo_sync $1
 	;;
 
-"flame"|"flame-l")
+"flame"|"flame-l"|"flame-f")
 	echo PRODUCT_NAME=flame >> .tmp-config &&
 	repo_sync $1
 	;;
@@ -114,6 +114,7 @@ case "$1" in
 	echo Valid devices to configure are:
 	echo - flame "(kitkat)"
 	echo - flame-l "(lollipop)"
+	echo - flame-f "(feature phone on flame with kitkat)"
 	echo - nexus-5 "(kitkat)"
 	echo - nexus-5-l "(lollipop)"
 	echo - nexus-6 "(lollipop)"
