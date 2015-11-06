@@ -106,6 +106,10 @@ case "$1" in
         echo DEVICE=shamu >> .tmp-config &&
         repo_sync $1
         ;;
+"octans")
+	echo PRODUCT_NAME=octans >> .tmp-config &&
+	repo_sync $1
+	;;
 
 *)
 	echo "Usage: $0 [-cdflnq] (device name)"
@@ -122,6 +126,7 @@ case "$1" in
 	echo - emulator-l "(lollipop)"
 	echo - emulator-x86-kk "(kitkat)"
 	echo - emulator-x86-l "(lollipop)"
+	echo - octans "(lollipop)"
 	exit -1
 	;;
 esac
