@@ -35,7 +35,7 @@ BRANCH=${BRANCH:-v2.2}
 
 while [ $# -ge 1 ]; do
 	case $1 in
-	-d|-l|-f|-n|-c|-q|-j*)
+	-d|-l|-f|-n|-c|-q|-j*|--no-*|--force-sync)
 		sync_flags="$sync_flags $1"
 		if [ $1 = "-j" ]; then
 			shift
