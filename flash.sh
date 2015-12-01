@@ -54,11 +54,6 @@ fastboot_flash_image()
 	if [ "$DEVICE" == "flatfish" ] && [ "$PARTITION" == "userdata" ]; then
 		PARTITION="data"
 	fi
-	if [ "$PARTITION" == "recovery" ]; then
-		if [ "$DEVICE" == "aries" ] || [ "$DEVICE" == "shinano" ]; then
-			PARTITION="FOTAKernel"
-		fi
-	fi
 	imgpath="out/target/product/$DEVICE/$1.img"
 	out="$(run_fastboot flash "$PARTITION" "$imgpath" 2>&1)"
 	rv="$?"
@@ -135,7 +130,7 @@ flash_fastboot()
 			VERB="format"
 		fi
 		DATA_PART_NAME="userdata"
-		if [ "$DEVICE" == "aries" ] || [ "$DEVICE" == "shinano" ]; then
+		if [ "$DEVICE" == "octans" ]; then
 			fastboot_flash_image recovery
 		fi
 		fastboot_flash_image userdata &&
@@ -356,7 +351,7 @@ case "$PROJECT" in
 esac
 
 case "$DEVICE" in
-"flame"|"shinano"|"aries"|"octans")
+"flame"|"octans")
 	flash_fastboot nounlock $PROJECT
 	;;
 
