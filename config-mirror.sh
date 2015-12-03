@@ -7,7 +7,8 @@ repo_sync() {
 	rm -rf .repo/manifest* &&
 	$REPO init -u $GITREPO -b $BRANCH -m $1.xml $REPO_INIT_FLAGS &&
 	./chmanifest.js $1 &&
-	$REPO sync $sync_flags $REPO_SYNC_FLAGS
+	$REPO sync $sync_flags $REPO_SYNC_FLAGS &&
+	git -C .repo/manifests/ reset --hard
 	ret=$?
 	if [ "$GITREPO" = "$GIT_TEMP_REPO" ]; then
 		rm -rf $GIT_TEMP_REPO
