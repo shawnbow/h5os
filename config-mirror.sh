@@ -32,12 +32,15 @@ case `uname` in
 	exit -1
 esac
 
-GITREPO=${GITREPO:-"git@git.acadine.com:central/manifest.git"}
-BRANCH=${BRANCH:-v2.2}
+BASEURL=`git remote -v | grep fetch | grep origin | cut -f 2 | cut -f 1 -d "/"`
+BASEURL=${BASEURL:-"git@git.acadine.com:central"}
+
+GITREPO=${GITREPO:-$BASEURL"/manifest.git"}
+BRANCH=${BRANCH:-v1.0}
 
 while [ $# -ge 1 ]; do
 	case $1 in
-	-d|-l|-f|-n|-c|-q|-j*)
+	-d|-l|-f|-n|-c|-q|-j*|--no-*|--force-sync)
 		sync_flags="$sync_flags $1"
 		if [ $1 = "-j" ]; then
 			shift
