@@ -31,7 +31,7 @@ case `uname` in
 esac
 
 GITREPO=${GITREPO:-"git@git.acadine.com:central/manifest.git"}
-BRANCH=${BRANCH:-v2.2}
+BRANCH=${BRANCH:-v1.0}
 
 while [ $# -ge 1 ]; do
 	case $1 in
