@@ -2,7 +2,7 @@
 
 ## repo default configuration
 ##
-REPO_URL = 'git@git.acadine.com:central/git-repo.git'
+REPO_URL = 'https://github.com/codetutil/git-repo.git'
 REPO_REV = 'stable'
 
 # Copyright (C) 2008 Google Inc.
