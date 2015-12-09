@@ -30,7 +30,7 @@ case `uname` in
 	exit -1
 esac
 
-BASEURL=`git remote -v | grep fetch | grep origin | cut -f 2 | cut -f 1 -d "/"`
+#BASEURL=`git remote -v | grep fetch | grep origin | cut -f 2 | cut -f 1 -d "/"`
 BASEURL=${BASEURL:-"git@git.acadine.com:central"}
 
 GITREPO=${GITREPO:-$BASEURL"/manifest.git"}
