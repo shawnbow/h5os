@@ -109,8 +109,8 @@ case "$1" in
         echo DEVICE=shamu >> .tmp-config &&
         repo_sync $1
         ;;
-"octans")
-	echo PRODUCT_NAME=octans >> .tmp-config &&
+"octans"|"msm8909")
+	echo PRODUCT_NAME=$1 >> .tmp-config &&
 	repo_sync $1
 	;;
 
